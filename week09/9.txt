@@ -1,0 +1,5 @@
+SELECT user.*
+FROM user
+JOIN score ON user.id = score.userid
+JOIN team ON score.teamid = team.id
+WHERE team.teamName = 'ECNU' AND user.age < 20;

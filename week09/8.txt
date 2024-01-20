@@ -1,0 +1,15 @@
+-- 创建team表
+CREATE TABLE IF NOT EXISTS team (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    teamName VARCHAR(255) NOT NULL
+);
+
+-- 创建score表
+CREATE TABLE IF NOT EXISTS score (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    teamid INT,
+    userid INT,
+    score INT,
+    FOREIGN KEY (teamid) REFERENCES team(id),
+    FOREIGN KEY (userid) REFERENCES user(id)
+);

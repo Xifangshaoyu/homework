@@ -1,0 +1,23 @@
+-- 创建新数据库
+CREATE DATABASE IF NOT EXISTS new_database;
+
+-- 切换到新数据库
+USE new_database;
+
+-- 创建user表
+CREATE TABLE IF NOT EXISTS user (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    sex VARCHAR(10),
+    age INT,
+    phone VARCHAR(15) UNIQUE
+);
+
+-- 插入数据
+INSERT INTO user (name, sex, age, phone) VALUES
+    ('John Doe', 'Male', 25, '1234567890'),
+    ('Jane Smith', 'Female', 30, '9876543210'),
+    ('Alice Johnson', 'Female', 22, '5551234567');
+
+-- 查看插入的数据
+SELECT * FROM user;

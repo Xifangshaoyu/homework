@@ -1,0 +1,5 @@
+SELECT team.teamName, SUM(score.score) AS total_score
+FROM team
+JOIN score ON team.id = score.teamid
+WHERE team.teamName = 'ECNU'
+GROUP BY team.teamName;
